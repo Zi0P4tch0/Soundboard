@@ -13,17 +13,17 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Nome-Programma.  If not, see <http://www.gnu.org/licenses/>.
+    along with Soundboard.  If not, see <http://www.gnu.org/licenses/>.
 
 
 #Soundboard
 
 I wrote this library to aid me in the development of a soundboard App for iPhone.
-I'm using a custom format.
+I'm using a custom soundboard binary format (simple but effective).
 
 ##Preface 
 
-All numbers are stored in little endian.
+Values are stored in little endian.
 
 All strings are encoded in UTF-8, and they're not C-Style (no trailing '\0').
 
@@ -69,4 +69,12 @@ Clips must have unique titles.
 
 [VARIABLE BYTES]	Clip data 
 
+### After last clip
 
+-- END OF FILE
+
+##Sample Code
+
+	Soundboard *s = [[Soundboard alloc] initWithFile:@"PATH"];
+	NSData *iconData = [s iconData];
+	NSData *firstClipData = [s clipDataFromClipAtIndex:0];
