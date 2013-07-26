@@ -15,6 +15,9 @@
     You should have received a copy of the GNU General Public License
     along with Soundboard.  If not, see <http://www.gnu.org/licenses/>.
 
+#Cocoapods 
+
+	pod 'Soundboard', :git => 'https://github.com/Zi0P4tch0/Soundboard.git'
 
 #Soundboard
 
