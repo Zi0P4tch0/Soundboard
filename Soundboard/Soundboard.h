@@ -64,13 +64,36 @@ Soundboard date.
 
 #pragma mark - Clip methods
 
+/**
+ Returns the number of clips in the sounboard.
+ @returns a NSUInteger value
+ */
 -(NSUInteger)numberOfClips;
+/**
+ Returns the clip title for clip at index <B>index</B>.
+ @param index A NSUInteger value representing clip index
+ @returns a NSString object
+ */
 -(NSString*)clipTitleAtIndex:(NSUInteger)index;
+/**
+ Returns the clip data for clip at index <B>index</B>.
+ @param index A NSUInteger value representing clip index
+ @returns a NSData object
+ */
 -(NSData*)clipDataFromClipAtIndex:(NSUInteger)index;
+/**
+ Returns the clip index for clip with title <B>title</B>.
+ @param title A NSString object representing clip title
+ @returns a NSUInteger value
+ */
 -(NSUInteger)clipIndexFromTitle:(NSString*)title;
 
 #pragma mark - Static methods
 
+/**
+ Checks wheter soundboard at path <B>path</B> is a valid one.
+ @returns a BOOL value
+ */
 +(BOOL)isValidSoundboard:(NSString*)path;
 
 @end
