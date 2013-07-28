@@ -33,7 +33,6 @@
 @synthesize name;
 @synthesize version;
 @synthesize author;
-@synthesize date;
 
 #pragma mark - Clip methods
 
@@ -150,24 +149,13 @@
                        length:var
                        encoding:NSUTF8StringEncoding];
         
-        //Date length
-        fread((void*)&var,4,1,soundboard);
-        //Date
-        fread((void*)buffer,var,1,soundboard);
-        
-        //Name
-        self.date = [[NSString alloc]
-                     initWithBytes:buffer
-                     length:var
-                     encoding:NSUTF8StringEncoding];
-        
         //Icon
         _icon = [[Icon alloc] init];
         
         fread((void*)&var,4,1,soundboard);
         
         _icon.size = var;
-        _icon.seekStart = 20 + [self.name length] + [self.version length] + [self.author length] + [self.date length];
+        _icon.seekStart = 20 + [self.name length] + [self.version length] + [self.author length];
         
         //Skip icon
         fseek(soundboard, _icon.size, SEEK_CUR);
@@ -274,19 +262,6 @@
         fclose(soundboard);
         return NO;
     }
-    //Date length
-    if ((fread((void*)&var,4,1,soundboard) != 1) || var<1)
-    {
-        fclose(soundboard);
-        return NO;
-    }
-    //Date
-    if (fseek(soundboard,var,SEEK_CUR))
-    {
-        fclose(soundboard);
-        return NO;
-    }
-    
     
     //Icon size
     if ((fread((void*)&var,4,1,soundboard) != 1) || var<1)

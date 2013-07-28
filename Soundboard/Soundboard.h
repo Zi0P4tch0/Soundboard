@@ -40,10 +40,7 @@ Soundboard version (e.g "1.0").
 Soundboard author.
 */
 @property (nonatomic,strong) NSString *author;
-/**
-Soundboard date.
-*/
-@property (nonatomic,strong) NSString *date;
+
 
 #pragma mark - Constructor
 
