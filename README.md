@@ -52,10 +52,6 @@ Clips must have unique titles.
 
 [VARIABLE BYTES]	Soundboard author (string)
 
-[4 BYTES] 			Length of soundboard date, in bytes (unsigned integer)
-
-[VARIABLE BYTES]	Soundboard date (string)(format dd/m/yyy - e.g. "01/7/1988")
-
 [4 BYTES]			Icon size, in bytes (unsigned integer)
 
 [VARIABLE BYTES]	Icon data (a .png image in my case)
