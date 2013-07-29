@@ -155,7 +155,7 @@
         fread((void*)&var,4,1,soundboard);
         
         _icon.size = var;
-        _icon.seekStart = 20 + [self.name length] + [self.version length] + [self.author length];
+        _icon.seekStart = 16 + [self.name length] + [self.version length] + [self.author length];
         
         //Skip icon
         fseek(soundboard, _icon.size, SEEK_CUR);
